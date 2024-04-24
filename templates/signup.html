@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Gymify - Dashbaord</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/static/images/whitelogo.png" type="image/x-icon">
+
+    <!-- Flaticons -->
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <!-- Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Sora Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/index.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .sora {
+        font-family: "Sora", sans-serif;
+    }
+</style>
+
+<body>
+
+    <section class="w-[100%] flex items-center h-[100vh]">
+        <div class="w-[100%] h-[100%] lg:w-[50%] absolute left-0 bg-slate-100
+         flex items-start justify-center md:justify-start lg:justify-center gap-[30px] flex-col md:p-[80px] pt-[250px] pb-[50px] px-[20px]  overflow-y-scroll  lg:overflow-y-hidden lg:px-[100px] lg:h-[100vh]">
+            <div class="flex items-center gap-[10px]">
+                <img src="/static/images/blacklogo.png" alt="" class="w-[30px]">
+                <h1 class="text-[25px] font-semibold sora">Gymify</h1>
+            </div>
+            <div>
+                <h1 class="text-[20px] font-semibold sora">Create a Schoolify account</h1>
+                <p class="text-[15px] ">Try Gymify for free.</p>
+            </div>
+
+            <form action="" class="w-[100%] flex flex-col gap-[20px]">
+                <div class="flex items-center w-[100%] gap-[20px] ">
+                    <div class="w-[100%] flex flex-col items-start gap-[7px]">
+                        <label for="" class="text-[15px]">Owner name</label>
+                        <input type="text" placeholder="Enter your name"
+                            class="w-[100%] h-[40px] px-[20px] focus:outline outline-2 text-[15px] placeholder:text-[15px] border">
+                    </div>
+                    <div class="w-[100%] flex flex-col items-start gap-[7px]">
+                        <label for="" class="text-[15px]">Gym name</label>
+                        <input type="text" placeholder="Enter your Gym name"
+                            class="w-[100%] h-[40px] px-[20px] focus:outline text-[15px] outline-2 placeholder:text-[15px] border">
+                    </div>
+                </div>
+                <div class="flex items-center w-[100%] gap-[20px]">
+                    
+                    <div class="w-[100%] flex flex-col items-start gap-[7px]">
+                        <label for="" class="text-[15px]">Mobile number</label>
+                        <input type="tel" maxlength="10" placeholder="Enter your mobile number"
+                            class="w-[100%] h-[40px] px-[20px] focus:outline text-[15px] outline-2 placeholder:text-[15px] border">
+                    </div>
+                    <div class="w-[100%] flex flex-col items-start gap-[7px]">
+                        <label for="" class="text-[15px]">Address</label>
+                        <input type="tel" maxlength="10" placeholder="Enter your Gym address"
+                            class="w-[100%] h-[40px] px-[20px] focus:outline text-[15px] outline-2 placeholder:text-[15px] border">
+                    </div>
+                </div>
+
+                
+                <div class="w-[100%] flex flex-col items-start gap-[7px]">
+                    <label for="" class="text-[15px]">Email</label>
+                    <input type="email" placeholder="Enter your email address"
+                        class="w-[100%] h-[40px] px-[20px] focus:outline text-[15px] outline-2 placeholder:text-[15px] border">
+                </div>
+                <div class="w-[100%] flex flex-col items-start gap-[7px]">
+                    <label for="" class="text-[15px]">Password</label>
+                    <input type="password" placeholder="Enter your email address"
+                        class="w-[100%] h-[40px] px-[20px] focus:outline text-[15px] outline-2 placeholder:text-[15px] border">
+                </div>
+                <button
+                    class="w-[100%] h-[50px] bg-gradient-to-tr from-zinc-900 to-zinc-700 text-[16px] font-semibold text-[#fff] flex items-center justify-center gap-[10px]">Create
+                    a free account <span class="text-[25px]">&rightarrow;</span> </button>
+            </form>
+
+            <div class="flex items-center gap-[20px] w-[100%]">
+                <div class="w-[100%] h-[2px] bg-[#ccc]"></div>
+                <div>OR</div>
+                <div class="w-[100%] h-[2px] bg-[#ccc]"></div>
+            </div>
+
+            <button class="w-[100%] flex items-center justify-center gap-[10px] bg-[#ffffff] py-[10px] border ">
+                <img src="/static/images/icons8-google-240.png" alt="google icon" class="w-[30px] h-auto">
+                Continue with Google
+            </button>
+
+            <div class="lg:hidden flex items-start gap-[10px] flex-col w-[100%]"> 
+                <p class="text-[#000]">Already have a Gymify account? <a href="/templates/login.html"
+                    class="text-[#0071E2]">Log In &longrightarrow;</a></p>
+
+            <p class="text-[#000]">By proceeding, you agree to the <a href="" class="text-[#0071E2]">Terms
+                    and Conditions</a> and <a href="" class="text-[#0071E2]">Privacy Policy</a></p>
+            </div>
+        </div>
+        <div  class="hidden lg:block w-[50%] absolute right-0 h-[100%] bg-slate-200 p-[30px]">
+
+            <img src="/static/images/bg2.jpg" alt=""
+                class="w-[100%] h-[100%] absolute top-0 left-0 right-0 object-cover "/>
+            <div class="absolute bottom-[50px] z-[1000] flex items-start flex-col gap-[10px] px-[40px]">
+                <p class="text-[#fff]">Already have a Schoolify account? <a href="/templates/login.html"
+                        class="text-[#0071E2]">Log In &longrightarrow;</a></p>
+
+                <p class="text-[#fff]">By proceeding, you agree to the <a href="" class="text-[#0071E2]">Terms
+                        and Conditions</a> and <a href="" class="text-[#0071E2]">Privacy Policy</a></p>
+            </div>
+            <div
+                class="w-[100%] h-[500px] absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent z-[100]">
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

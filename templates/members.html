@@ -1,0 +1,351 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main-content %}
+<!--! Main Section -->
+<section id="mainSection" class="absolute top-[9%] flex w-[100%] h-[91%]">
+    <section id="sidebar" class="lg:w-[20%] xl:w-[18%]  lg:translate-x-[0px] gymify-sidebar">
+
+        <!-- Home -->
+        <a href="/" id="home" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-house-blank group-hover:text-[rgb(255,255,255)] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Home</p>
+        </a>
+
+        <!-- Members -->
+        <a href="/members" id="members" class="tab gymify-sidebar-active-tabs">
+            <i class="fi fi-rs-user  gymify-active-tab-icons"></i>
+            <p class="gymify-active-tabs-text">Members</p>
+        </a>
+
+        <!-- Products -->
+        <a href="/products" id="products" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-boxes  group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Products</p>
+        </a>
+
+        <!-- Mailing -->
+        <a href="/mailing" id="mailing" class="tab  hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-envelope group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Mailing</p>
+        </a>
+
+        <!-- Analytics -->
+        <a href="/analytics" id="analytics" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-stats group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Analytics</p>
+        </a>
+
+        <!-- Attendance -->
+        <a href="/attendance" id="attendance" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rs-user-check group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Attendance</p>
+        </a>
+
+        <!-- Sales Channels -->
+        <div class=" relative top-[50px] flex items-center justify-between px-[20px] py-[10px] bg-[#efefef]">
+            <p>Sales channel</p>
+            <i class="fi fi-rr-angle-small-right text-[18px] relative top-[6px]"></i>
+        </div>
+
+        <a href="/store" id="store" class="tab relative top-[50px] hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-stats group-hover:text-[#fff] gymify-tab-icons "></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Online store</p>
+        </a>
+
+        <a href="/settings" id="settings" class="tab absolute bottom-[0px] gymify-sidebar-tabs hover:bg-[#202020]  group border-t">
+            <i class="fi fi-rr-stats gymify-tab-icons group-hover:text-[#fff] "></i>
+            <p class="text-[16px] text-[#202020] group-hover:text-[#fff]">Settings </p>
+        </a>
+
+    </section>
+
+    <section id="content"
+        class="absolute h-[100%] w-[100%] lg:left-[20%] xl:left-[18%]  lg:w-[80%] xl:w-[82%] sm:p-[20px]  ">
+        <!--! Content section content -->
+
+        <!-- Heading & create Member -->
+        <section class="flex items-center justify-between py-[20px] px-[20px] sm:px-[0px]">
+            <h1 class="text-[23px] font-medium text-[#202020]">Members</h1>
+            <div class="flex items-center gap-[10px]">
+                <div
+                    class="cursor-pointer w-[40px] h-[40px] sm:hidden border-[2px] border-[#202020] flex items-center justify-center">
+                    <i class="fi fi-rr-menu-dots text-[16px] text-[#202020] relative top-[2px] "></i>
+                </div>
+                <button
+                    class="hidden sm:block px-[15px] py-[8px]  text-[14px]  font-medium text-[#202020] hover:text-[#fff] border-[2px] border-[#202020] hover:bg-[#202020]"><a href="{% url 'export_all' %}">
+                        Export</a></button>
+                <button
+                    class="px-[15px] py-[8px]  text-[14px] bg-[#202020] font-medium text-[#fff] hover:text-[#202020] border-[2px] border-[#202020] hover:bg-transparent"><a href="{% url 'create_member' %}">Create
+                        Member</a></button>
+            </div>
+        </section>
+
+        <!-- Members Today,7 days & 30 days -->
+        <section class="w-[100%] bg-[#fcfcfc]  sm:flex items-start border-[1px] border-[#e4e4e4] ">
+            <div class="flex items-center justify-between w-[100%] sm:hidden pt-[8px] pr-[10px] pl-[12px]">
+                <button
+                    class="w-[100%] text-[14px] font-medium text-[#fff] bg-[#202020] p-[10px]  border-[1px] border-[#e2e2e2]">Today</button>
+                <button
+                    class="w-[100%] text-[14px] font-medium text-[#202020] bg-[#fff] p-[10px] border-[1px] border-[#efefef]">7
+                    Days</button>
+                <button
+                    class="w-[100%] text-[14px] font-medium text-[#202020] bg-[#fff] p-[10px]  border-[1px] border-[#efefef] ">30
+                    Days</button>
+            </div>
+            <!-- Stat -->
+            <div id="stats"
+                class="flex flex-nowrap items-center border-[1px] border-t-[#dbdbdb] mt-[10px] border-l-[#fcfcfc]  border-b-[#fcfcfc] border-r-[#fcfcfc] overflow-x-auto sm:border-none sm:mt-[-10px] sm:gap-[15px] pb-[10px] px-[10px] sm:pt-[10px]">
+                <button
+                    class="min-w-[143px] h-[65px] text-[14px] font-medium text-[#dcdcdc] bg-[#202020] border-[1px] border-[#282828] relative top-[5px] hidden sm:block">Today</button>
+
+                <div id="statsBox" class="flex items-center gap-[20px] sm:overflow-x-auto">
+                    <div class="w-[1px] h-[60px] bg-[#ccc] mt-[10px]"></div>
+                    <div class="flex items-center justify-between">
+                        <div
+                            class="py-[10px] px-[15px] flex items-start justify-start flex-col cursor-pointer hover:bg-[#ccc] bg-[#efefef] mt-[10px] sm:w-[100%]">
+                            <p class="text-[15px] text-[#202020] text-nowrap">Total Members</p>
+                            <div class="flex items-center gap-[10px]">
+                                <p class="text-[15px] font-medium text-[#202020]">{{total_members}}</p>
+                                <div class="w-[8px] h-[2px] bg-[#202020]"></div>
+                                <div class="w-[60px] h-[2px] bg-green-600 shadow-[0px_2px_5px_#16A34A]"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-[1px] h-[60px] bg-[#efefef] mt-[10px]"></div>
+
+                    <div class="flex items-center gap-[10px]">
+                        <div
+                            class="py-[10px] px-[15px] flex items-start justify-start flex-col cursor-pointer bg-[#efefef] hover:bg-[#ccc] mt-[10px] ">
+                            <p class="text-[15px] text-[#202020] text-nowrap">Paid Members</p>
+                            <div class="flex items-center gap-[10px]">
+                                <p class="text-[15px] font-medium text-[#202020]">{{paid_members_count}}</p>
+                                <div class="w-[8px] h-[2px] bg-[#202020]"></div>
+                                <div class="w-[60px] h-[2px] bg-green-600 shadow-[0px_2px_5px_#16A34A]"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="w-[1px] h-[60px] bg-[#ccc] mt-[10px]"></div>
+
+                    <div class="flex items-center gap-[10px]">
+                        <div
+                            class="py-[10px] px-[15px] flex items-start justify-start flex-col cursor-pointer bg-[#efefef] hover:bg-[#ccc] mt-[10px] ">
+                            <p class="text-[15px] text-[#202020] text-nowrap">Unpaid Members</p>
+                            <div class="flex items-center gap-[10px]">
+                                <p class="text-[15px] font-medium text-[#202020]">{{unpaid_members_count}}</p>
+                                <div class="w-[8px] h-[2px] bg-[#202020]"></div>
+                                <div class="w-[60px] h-[2px] bg-green-600 shadow-[0px_2px_5px_#16A34A]"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+        </section>
+
+        <!-- Members Section-->
+        <section id="members" class="py-[20px] w-[100%]">
+            <!-- Navigation -->
+            <div class="flex items-center justify-between gap-[20px] bg-[#fcfcfc] border-[1px] border-[#e4e4e4]">
+
+                <div class="flex items-center gap-[10px] overflow-x-auto no-scrolling px-[10px] py-[8px]">
+                        <a href="{% url 'members' %}" class="px-[15px] py-[5px] border-[#202020] text-nowrap text-[#fff] bg-[#202020] cursor-pointer">
+                            <p >All</p>
+                        </a>
+                        
+                        <a href="{% url 'sort_data' %}?query=new" class="px-[15px] py-[5px] hover:bg-[#efefef] text-nowrap text-[#202020] cursor-pointer">
+                            <p >New</p>
+                        </a>
+                        <a href="{% url 'sort_data' %}?query=paid" class="px-[15px] py-[5px] hover:bg-[#efefef] text-nowrap text-[#202020] cursor-pointer">
+                            <p>Paid</p>
+                        </a>
+                        
+                        <a  href="{% url 'sort_data' %}?query=unpaid" class="px-[15px] py-[5px] hover:bg-[#efefef] text-nowrap text-[#202020] cursor-pointer">
+                            <p>Unpaid</p>
+                        </a>
+                        
+                        <a href="{% url 'sort_data' %}?query=personal_training" class="px-[15px] py-[5px] hover:bg-[#efefef] text-nowrap text-[#202020] cursor-pointer">
+                            <p>Personal Training</p>
+                        </a>
+                </div>
+                <div class="flex items-center gap-[15px] border-[1px] border-[#e4e4e4] px-[10px] py-[8px] ">
+                    <!-- <div
+                        class="w-[60px] h-[35px] flex items-center justify-center bg-[#efefef] gap-[5px] cursor-pointer">
+                        <i class="fi fi-rr-search relative top-[2px] text-[15px] text-[#202020]"></i>
+                        <i class="fi fi-rr-bars-filter relative top-[2px] text-[15px] text-[#202020]"></i>
+
+                    </div> -->
+                    <!-- Include this form in your HTML -->
+                    <form action="{% url 'search_data' %}" method="get">
+                        <input type="text" name="query" placeholder="Search...">
+                        <button type="submit" class="px-[10px] py-[5px] border border-[#000]">Search</button>
+                    </form>
+                    <div class="w-[35px] h-[35px] flex items-center justify-center bg-[#efefef] ">
+                        <i class="fi fi-rr-sort-alt relative top-[2px] text-[15px] text-[#202020] cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation 2 -->
+            <div
+                class=" hidden md:flex items-start justify-between  p-[15px] bg-[#e4e4e4]  w-[100%] gap-[20px] flex-nowrap">
+                <div class="text-[#202020] text-[15px] text-nowrap w-[10%]">Member ID</div>
+                <div class="text-[#202020] text-[15px] text-nowrap w-[25%]">Name</div>
+                <div class="text-[#202020] text-[15px] text-nowrap w-[15%]">Joined Date</div>
+                <div class="text-[#202020] text-[15px] text-nowrap w-[15%]">Expiry Date</div>
+                <div class="text-[#202020] text-[15px] text-nowrap w-[10%]">Fees</div>
+                <div class="text-[#202020] text-[15px] text-nowrap w-[15%]">Mailing</div>
+                <div class="text-[#202020] text-[15px] text-nowrap w-[10%]">Edit</div>
+            </div>
+            <!-- Members -->
+            <!-- Member 1 -->
+            <section>
+                <!-- Mobile -->
+                {% for member in members %} 
+                <div id="memberTemplate">
+                    <div
+                        class=" md:hidden  p-[20px] flex flex-col md:flex-row md:justify-between md:items-center  gap-[10px] bg-[#fcfcfc] cursor-pointer md:w-[100%] md:gap-[20px]">
+                             
+                        <div class="flex items-center gap-[10px] justify-between md:justify-start md:items-center">
+                            <div class="flex items-center gap-[10px]">
+                                <p class="text-[#202020] text-[14px] font-medium">{{member.id}}</p>
+                                <p class="text-[#202020] text-[14px]">Feb 23 2024</p>
+                            </div>
+                            <div class=" px-[12px] py-[3px] bg-[#efefef] text-[12px]  text-[#202020]">
+                                {{member.training_type}}
+                            </div>
+                        </div>
+                        <div class=" flex items-center gap-[10px] justify-between">
+                            <h3 class="text-[#202020] text-[16px] font-medium">{{member.name}}</h3>
+                            <h3 class="text-[#202020] text-[16px] font-medium">Paid - ₹ {{member.fees}}</h3>
+                        </div>
+
+                        <div class=" flex items-center justify-between gap-[10px]">
+                            <div class="flex items-center justify-between gap-[10px] flex-wrap ">
+                                <div
+                                    class="cursor-pointer text-[13px] px-[10px] py-[3px] bg-[#29a22948] text-[#202020] ">
+                                    Joined -  {{member.start_date}}</div>
+                                <div
+                                    class="cursor-pointer text-[13px] px-[10px] py-[3px] bg-[#ff000048] text-[#202020] ">
+                                    Expire -  {{member.end_date}}</div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    {% endfor %}
+                    <!-- Laptop Section  -->
+                    {% for member in members %} 
+                    <div
+                        class="hidden md:flex items-center justify-start border-[1px] border-[#e4e4e4]  gap-[20px] w-[100%] p-[15px] bg-[#fcfcfc] cursor-pointer overflow-x-auto no-scrolling">
+ 
+                        <div class="w-[10%]">
+                            <p class=" text-[#202020] text-[15px] font-medium ">{{member.id}}</p>
+                        </div>
+                        <div class="w-[25%]">
+                            <h3 class=" text-[#202020] text-[15px]   text-ellipsis overflow-hidden text-nowrap">
+                                {{member.name}}</h3>
+                        </div>
+                        <div class="w-[15%]">
+                            <div
+                                class=" cursor-pointer py-[5px] px-[10px] bg-[#26912648] text-[15px]  text-[#202020] text-nowrap inline-block">
+                                {{member.start_date}}</div>
+                        </div>
+                        <div class="w-[15%]">
+                            <div
+                                class=" cursor-pointer py-[5px] px-[10px] bg-[#ff000048] text-[15px] text-[#20202] text-nowrap inline-block">
+                                {{member.end_date}}</div>
+                        </div>
+                        <div class="w-[10%]">
+
+                            <p class="text-[15px] text-[#202020] font-medium">₹ {{member.fees}}</p>
+                        </div>
+                        <div class="w-[15%]">
+                            <button class="px-[15px] py-[5px] bg-[#efefef]  text-[#202020] text-[15px] text-nowrap"><a href="{% url 'email' %}?email={{ member.email }}">Send Email</a></button>
+                        </div>
+                        <div class="w-[10%] flex items-center gap-[10px] cursor-pointer group">
+                            <p class="text-[15px] text-[#202020] group-hover:underline underline-offset-4">Edit</p>
+                            <i
+                                class="fi fi-rr-user-pen text-[15px] text-[#202020] group-hover:underline underline-offset-4"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+                {% endfor %}
+                <!-- Member 2 -->
+                <!-- <div id="memberTemplate">
+                    <div
+                        class=" md:hidden p-[20px] flex flex-col md:flex-row md:justify-between md:items-center  gap-[10px] bg-[#fcfcfc] border-[1px] border-[#e4e4e4] cursor-pointer md:w-[100%] md:gap-[20px]">
+                        <div class="flex items-center gap-[10px] justify-between md:justify-start md:items-center">
+                            <div class="flex items-center gap-[10px]">
+                                <p class="text-[#202020] text-[14px] font-medium">#1002</p>
+                                <p class="text-[#202020] text-[14px]">Mar 02 2024</p>
+                            </div>
+                            <div class=" px-[12px] py-[3px] text-[12px] bg-[#efefef] text-[#202020]">
+                                Personal Training
+                            </div>
+                        </div>
+                        <div class=" flex items-center gap-[10px] justify-between">
+                            <h3 class="text-[#202020] text-[16px] font-medium">Vedant Yengupatla</h3>
+                            <h3 class="text-[#202020] text-[16px] font-medium">Unpaid - ₹ 800</h3>
+                        </div>
+
+                        <div class=" flex items-center justify-between gap-[10px]">
+                            <div class="flex items-center justify-between gap-[10px] flex-wrap ">
+                                <div
+                                    class="cursor-pointer text-[13px] px-[10px] py-[3px] bg-[#27922748] text-[#202020] ">
+                                    Joined - Mar 02 2024</div>
+                                <div
+                                    class="cursor-pointer text-[13px] px-[10px] py-[3px] bg-[#ff000048] text-[#202020]">
+                                    Expire - Apr 02 2024</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    Laptop Section  -->
+                    <!-- <div
+                        class="hidden md:flex items-center justify-start border-[1px] border-[#efefef]  gap-[20px] w-[100%] p-[15px] bg-[#fcfcfc] cursor-pointer overflow-x-auto no-scrolling">
+                        <div class="w-[10%]">
+                            <p class=" text-[#202020] text-[15px] font-medium ">#1002</p>
+                        </div>
+                        <div class="w-[25%]">
+                            <h3 class=" text-[#202020] text-[15px]   text-ellipsis overflow-hidden text-nowrap">
+                                Vedant Yengupatla</h3>
+                        </div>
+                        <div class="w-[15%]">
+                            <div
+                                class=" cursor-pointer  py-[5px] px-[10px] bg-[#26912648] text-[15px]  text-[#202020] text-nowrap inline-block">
+                                Mar 02 2024</div>
+                        </div>
+                        <div class="w-[15%]">
+                            <div
+                                class=" cursor-pointer  py-[5px] px-[10px] bg-[#ff000048] text-[15px]  text-[#202020] text-nowrap inline-block">
+                                Apr 02 2024</div>
+                        </div>
+                        <div class="w-[10%]">
+
+                            <p class="text-[15px] text-[#202020] ">₹ 800</p>
+                        </div>
+                        <div class="w-[15%]">
+                            <button class="px-[15px] py-[5px] bg-[#efefef] text-[#202020] text-[15px] text-nowrap">Send
+                                mail</button>
+                        </div>
+                        <div class="w-[10%] flex items-center gap-[10px] cursor-pointer group">
+                            <p class="text-[15px] text-[#202020] group-hover:underline underline-offset-4">Edit</p>
+                            <i
+                                class="fi fi-rr-user-pen text-[15px] text-[#202020] group-hover:underline underline-offset-4"></i>
+                        </div>
+                    </div>
+                </div> -->
+            </section>
+
+        </section>
+
+        
+    </section>
+</section>
+
+ 
+{% endblock main-content %}

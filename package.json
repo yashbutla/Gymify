@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.37",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "flowbite": "^2.3.0"
+  },
+  "name": "gymify",
+  "description": "Gymify is a comprehensive gym management platform designed to streamline operations for gym owners and enhance the fitness experience for members. With Gymify, gym owners can efficiently manage memberships, track attendance, sell products, and communicate with members, all in one place. Members can access their personalized diet plans, view class schedules, and stay updated on gym announcements.",
+  "version": "1.0.0",
+  "main": "postcss.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

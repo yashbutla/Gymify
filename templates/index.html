@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main-content %}
+    <!--! Main Section -->
+    <section id="mainSection" class="absolute top-[9%] flex w-[100%] h-[91%]">
+        <!--! Sidebar content -->
+        <section id="sidebar"
+            class="lg:w-[20%] xl:w-[18%]  lg:translate-x-[0px] gymify-sidebar">
+
+            <!-- Home -->
+            <a href="/" id="home"
+                class="tab gymify-sidebar-active-tabs">
+                <i class="fi fi-rr-house-blank gymify-active-tab-icons"></i>
+                <p class="gymify-active-tabs-text ">Home</p>
+            </a>
+
+            <!-- Members -->
+            <a href="/members" id="members"
+                class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rs-user  group-hover:text-[#fff] gymify-tab-icons"></i>
+                <p class="gymify-tabs-text  group-hover:text-[#fff]">Members</p>
+            </a>
+
+            <!-- Products -->
+            <a href="/products" id="products"
+                class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rr-boxes  group-hover:text-[#fff] gymify-tab-icons"></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Products</p>
+            </a>
+
+            <!-- Mailing -->
+            <a href="/mailing" id="mailing"
+                class="tab  hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rr-envelope group-hover:text-[#fff] gymify-tab-icons"></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Mailing</p>
+            </a>
+
+            <!-- Analytics -->
+            <a href="/analytics" id="analytics"
+                class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rr-stats group-hover:text-[#fff] gymify-tab-icons "></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Analytics</p>
+            </a>
+
+            <!-- Attendance -->
+            <a href="/attendance" id="attendance"
+                class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rs-user-check group-hover:text-[#fff] gymify-tab-icons "></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Attendance</p>
+            </a>
+
+            <!-- Sales Channels -->
+            <div class=" relative top-[50px] flex items-center justify-between px-[20px] py-[10px] bg-[#efefef]">
+                <p>Sales channel</p>
+                <i class="fi fi-rr-angle-small-right text-[18px] relative top-[6px]"></i>
+            </div>
+
+            <a href="/store" id="store"
+                class="tab relative top-[50px] hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rr-stats group-hover:text-[#fff] gymify-tab-icons "></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Online store</p>
+            </a>
+            
+            <a href="/settings" id="settings"
+                class="tab absolute bottom-[0px] gymify-sidebar-tabs hover:bg-[#202020]  group border-t">
+                <i class="fi fi-rr-stats gymify-tab-icons group-hover:text-[#fff] "></i>
+                <p class="text-[16px] text-[#202020] group-hover:text-[#fff]">Settings </p>
+            </a>
+
+        </section>
+        <!--! Content section content -->
+        <section id="content"
+            class="absolute h-[100%] w-[100%] lg:left-[20%] xl:left-[18%]  lg:w-[80%] xl:w-[82%] sm:p-[20px]  ">
+            <h1>Home Page</h1>
+        </section>
+    </section>
+{% endblock main-content %}

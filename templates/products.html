@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main-content %}
+
+    <!--! Main Section -->
+    <section id="mainSection" class="absolute top-[9%] flex w-[100%] h-[91%]">
+        <!--! Sidebar content -->
+        <section id="sidebar" class="lg:w-[20%] xl:w-[18%]  lg:translate-x-[0px] gymify-sidebar">
+
+            <!-- Home -->
+            <a href="/" id="home" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rr-house-blank group-hover:text-[#fff] gymify-tab-icons"></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Home</p>
+            </a>
+    
+            <!-- Members -->
+            <a href="/members" id="members" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rs-user  group-hover:text-[#fff] gymify-tab-icons"></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Members</p>
+            </a>
+    
+            <!-- Products -->
+            <a href="/products" id="products" class="tab gymify-sidebar-active-tabs">
+                <i class="fi fi-rr-boxes   
+                gymify-active-tab-icons"></i>
+                <p class="gymify-active-tabs-text">Products</p>
+            </a>
+    
+            <!-- Mailing -->
+            <a href="/mailing" id="mailing" class="tab  hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rr-envelope group-hover:text-[#fff] gymify-tab-icons"></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Mailing</p>
+            </a>
+    
+            <!-- Analytics -->
+            <a href="/analytics" id="analytics" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rr-stats group-hover:text-[#fff] gymify-tab-icons"></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Analytics</p>
+            </a>
+    
+            <!-- Attendance -->
+            <a href="/attendance" id="attendance" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rs-user-check group-hover:text-[#fff] gymify-tab-icons"></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Attendance</p>
+            </a>
+    
+            <!-- Sales Channels -->
+            <div class=" relative top-[50px] flex items-center justify-between px-[20px] py-[10px] bg-[#efefef]">
+                <p>Sales channel</p>
+                <i class="fi fi-rr-angle-small-right text-[18px] relative top-[6px]"></i>
+            </div>
+    
+            <a href="/store" id="store" class="tab relative top-[50px] hover:bg-[#202020] group gymify-sidebar-tabs">
+                <i class="fi fi-rr-stats group-hover:text-[#fff] gymify-tab-icons "></i>
+                <p class="gymify-tabs-text group-hover:text-[#fff]">Online store</p>
+            </a>
+    
+            <a href="/settings" id="settings" class="tab absolute bottom-[0px] gymify-sidebar-tabs hover:bg-[#202020] group border-t">
+                <i class="fi fi-rr-stats gymify-tab-icons group-hover:text-[#fff] "></i>
+                <p class="text-[16px] text-[#202020] group-hover:text-[#fff]">Settings </p>
+            </a>
+    
+        </section>
+
+        <!--! Content section content -->
+        <section id="content"
+            class="absolute h-[100%] w-[100%] lg:left-[20%] xl:left-[18%]  lg:w-[80%] xl:w-[82%] sm:p-[20px]  ">
+            <!-- Navigation -->
+            <div class="flex items-center justify-between p-[20px] ">
+                <h1 class="text-[23px] font-semibold text-[#202020]">Products</h1>
+                <div class="flex items-center gap-[20px]">
+                    <div class="cursor-pointer w-[36px] h-[36px] sm:hidden border-[2px] border-[#202020] flex items-center justify-center">
+                        <i class="fi fi-rr-menu-dots text-[16px] text-[#202020] relative top-[2px] "></i>
+                    </div>
+                    <button class="hidden sm:block px-[20px] py-[5px] border-[2px] border-[#202020] text-[15px]">Export</button>
+                    <button class="hidden sm:block px-[20px] py-[5px] border-[2px] border-[#202020] text-[15px]">Import</button>
+                    <button
+                        class="px-[20px] text-nowrap py-[5px] border-[2px] border-[#202020] bg-[#202020] text-[#fff] text-[15px]">Add
+                        product</button>
+                </div>
+            </div>
+
+            <!-- Stats  -->
+            <div class="w-[100%] flex items-center justify-start p-[8px] bg-[#fcfcfc] border mt-[30px] overflow-x-scroll no-scrolling">
+                <div
+                    class="cursor-pointer flex items-start justify-start hover:bg-[#efefef] px-[10px] py-[5px] gap-[5px] flex-col w-[300px]">
+                    <p class="text-[15px] text-nowrap">Products by sell-through rate</p>
+                    <p class="text-[15px] text-nowrap">0%</p>
+                </div>
+                <div class="w-[1px] h-[70px] bg-[#e4e4e4] mx-[8px]"></div>
+                <div
+                    class="cursor-pointer flex items-start justify-start hover:bg-[#efefef] px-[10px] py-[5px] gap-[5px] flex-col w-[300px]">
+                    <p class="text-[15px] text-nowrap">Today's sell</p>
+                    <p class="text-[15px] text-nowrap">0%</p>
+                </div>
+                <div class="w-[1px] h-[70px] bg-[#e4e4e4] mx-[8px]"></div>
+                <div
+                    class="cursor-pointer flex items-start justify-start hover:bg-[#efefef] px-[10px] py-[5px] gap-[5px] flex-col w-[300px]">
+                    <p class="text-[15px] text-nowrap">This month</p>
+                    <p class="text-[15px] text-nowrap">0%</p>
+                </div>
+            </div>
+
+            <!-- Products Section  -->
+            <section id="products" class="w-[100%] mt-[30px]  border">
+                <section id="productSectionNav">
+                    <div id="productNav" class="flex items-center gap-[20px] p-[10px] border border-t-0 overflow-x-scroll no-scrolling">
+                        <div class="px-[15px] py-[7px] bg-[#202020] text-[#fff] cursor-pointer text-[15px]">All</div>
+                        <div class="px-[15px] py-[7px] hover:bg-[#efefef] text-[#202020] cursor-pointer text-[15px]">Active</div>
+                        <div class="px-[15px] py-[7px] hover:bg-[#efefef] text-[#202020] cursor-pointer text-[15px]">Unactive</div>
+                        <div class="px-[15px] py-[7px] hover:bg-[#efefef] text-[#202020] cursor-pointer text-[15px]">Draft</div>
+                        <div class="px-[15px] py-[7px] hover:bg-[#efefef] text-[#202020] cursor-pointer text-[15px]">Archived</div>
+                    </div>
+                    <div id="productsNa" class="hidden  w-[100%] p-[10px] sm:flex items-center border border-t-0 bg-[#f9f9f9]">
+                        <div class="w-[40%]">Product</div>
+                        <div class="w-[20%] flex items-center justify-center">Status</div>
+                        <div class="w-[20%] flex items-center justify-center">Inventory</div>
+                        <div class="w-[20%] flex items-center justify-center">Vendor</div>
+                    </div>
+                </section>
+                <section id="productRow">
+                    <!-- Product 1 -->
+
+                    <div id="product1"
+                        class="cursor-pointer p-[10px] w-[100%] flex items-center border border-t-0 hover:bg-[#f4f4f4]">
+                        <!-- MobileSection  -->
+                        <div id="mobileProduct" class="flex sm:hidden items-start justify-between gap-[25px] py-[15px]">
+                            <div>
+                                <div id="productImg" class="w-[60px] h-[60px] bg-slate-200">
+
+                                </div>
+                            </div>
+                            <div class="flex items-start flex-col justify-start gap-[6px]">
+                                <p class="text-[18px] font-medium">Lorem ipsum dolor sit amet.</p>
+                                <div class=" inline-block text-nowrap text-[#6b6b6b] text-[15px] font-medium">
+                                    12 in stock
+                                </div>
+                                <div class="inline-block  text-[#6b6b6b] text-[15px] font-medium">
+                                    Nutra Box
+                                </div>
+                                <div
+                                    class="py-[5px] w-[80px] inline-block px-[20px] bg-[#42ff4250] text-[15px] text-[#1a5e1a] font-medium">
+                                    Active
+                                </div>
+                            </div>
+                        </div>
+                        <div id="laptopProduct" class="hidden sm:flex items-center w-[100%]">
+                            <!-- Product Img & Name -->
+                            <div class="flex items-center gap-[15px] w-[40%]">
+
+                                <div id="productImg" class="w-[60px] h-[60px] bg-slate-200">
+
+                                </div>
+                                <p class="text-[15px]">Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <!-- Status -->
+                            <div class="w-[20%] flex items-center justify-center">
+
+                                <div
+                                    class="py-[5px] w-[80px] inline-flex items-center justify-center px-[20px] bg-[#42ff4250] text-[15px] text-[#1a5e1a] font-medium">
+                                    Active
+                                </div>
+                            </div>
+
+                            <!-- Inventry -->
+                            <div class="w-[20%] flex items-center justify-center">
+
+                                <div class="h-[35px] inline-flex text-nowrap items-center justify-center px-[20px] ">
+                                    12 in stock
+                                </div>
+                            </div>
+                            <div class="w-[20%] flex items-center justify-center">
+
+                                <div class="h-[40px] inline-flex items-center justify-center px-[20px] text-[15px]">
+                                    Nutra Box
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+
+                    <div id="product2"
+                        class="cursor-pointer p-[10px] w-[100%] flex items-center border border-t-0 hover:bg-[#f4f4f4]">
+                        <!-- MobileSection  -->
+                        <div id="mobileProduct" class="flex sm:hidden items-start justify-between gap-[25px] py-[15px]">
+                            <div>
+                                <div id="productImg" class="w-[60px] h-[60px] bg-slate-200">
+
+                                </div>
+                            </div>
+                            <div class="flex items-start flex-col justify-start gap-[6px]">
+                                <p class="text-[18px] font-medium">Lorem ipsum dolor sit amet.</p>
+                                <div class=" inline-block text-nowrap text-[#6b6b6b] text-[15px] font-medium">
+                                    12 in stock
+                                </div>
+                                <div class="inline-block  text-[#6b6b6b] text-[15px] font-medium">
+                                    Nutra Box
+                                </div>
+                                <div
+                                    class="py-[5px] w-[80px] inline-block px-[20px] bg-[#42ff4250] text-[15px] text-[#1a5e1a] font-medium">
+                                    Active
+                                </div>
+                            </div>
+                        </div>
+                        <div id="laptopProduct" class="hidden sm:flex items-center w-[100%]">
+                            <!-- Product Img & Name -->
+                            <div class="flex items-center gap-[15px] w-[40%]">
+
+                                <div id="productImg" class="w-[60px] h-[60px] bg-slate-200">
+
+                                </div>
+                                <p class="text-[15px]">Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <!-- Status -->
+                            <div class="w-[20%] flex items-center justify-center">
+
+                                <div
+                                    class="py-[5px] w-[80px] inline-flex items-center justify-center px-[20px] bg-[#42ff4250] text-[15px] text-[#1a5e1a] font-medium">
+                                    Active
+                                </div>
+                            </div>
+
+                            <!-- Inventry -->
+                            <div class="w-[20%] flex items-center justify-center">
+
+                                <div class="h-[35px] text-nowrap inline-flex items-center justify-center px-[20px] ">
+                                    12 in stock
+                                </div>
+                            </div>
+                            <div class="w-[20%] flex items-center justify-center">
+
+                                <div class="h-[40px] inline-flex items-center justify-center px-[20px] text-[15px]">
+                                    Nutra Box
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </section>
+        </section>
+    </section>
+{% endblock main-content %}

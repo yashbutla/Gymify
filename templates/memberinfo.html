@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main-content %}
+
+<!--! Main Section -->
+<section id="mainSection" class="absolute top-[9%] flex w-[100%] h-[91%]">
+    <!--! Sidebar content -->
+    <section id="sidebar" class="lg:w-[20%] xl:w-[18%]  lg:translate-x-[0px] gymify-sidebar">
+
+        <!-- Home -->
+        <a href="/" id="home" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-house-blank group-hover:text-[rgb(255,255,255)] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Home</p>
+        </a>
+
+        <!-- Members -->
+        <a href="/members" id="members" class="tab gymify-sidebar-active-tabs">
+            <i class="fi fi-rs-user  gymify-active-tab-icons"></i>
+            <p class="gymify-active-tabs-text">Members</p>
+        </a>
+
+        <!-- Products -->
+        <a href="/products" id="products" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-boxes  group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Products</p>
+        </a>
+
+        <!-- Mailing -->
+        <a href="/mailing" id="mailing" class="tab  hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-envelope group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Mailing</p>
+        </a>
+
+        <!-- Analytics -->
+        <a href="/analytics" id="analytics" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-stats group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Analytics</p>
+        </a>
+
+        <!-- Attendance -->
+        <a href="/attendance" id="attendance" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rs-user-check group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Attendance</p>
+        </a>
+
+        <!-- Sales Channels -->
+        <div class=" relative top-[50px] flex items-center justify-between px-[20px] py-[10px] bg-[#efefef]">
+            <p>Sales channel</p>
+            <i class="fi fi-rr-angle-small-right text-[18px] relative top-[6px]"></i>
+        </div>
+
+        <a href="/store" id="store" class="tab relative top-[50px] hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-stats group-hover:text-[#fff] gymify-tab-icons "></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Online store</p>
+        </a>
+
+        <a href="/settings" id="settings"
+            class="tab absolute bottom-[0px] gymify-sidebar-tabs hover:bg-[#202020]  group border-t">
+            <i class="fi fi-rr-stats gymify-tab-icons group-hover:text-[#fff] "></i>
+            <p class="text-[16px] text-[#202020] group-hover:text-[#fff]">Settings </p>
+        </a>
+
+    </section>
+
+    <!--! Content section content -->
+    <section id="content"
+        class="absolute h-[100%] w-[100%] lg:left-[20%] xl:left-[18%]  lg:w-[80%] xl:w-[82%] sm:p-[20px]  ">
+        <!-- Head -->
+        <div class="flex items-center justify-between ">
+            <div class="flex items-center gap-[20px]">
+                <div class="w-[35px] h-[35px]  bg-[#efefef] flex items-center justify-center">
+                    <i class="fi fi-rr-arrow-left text-[17px] relative top-[3px] text-[#202020]"></i>
+                </div>
+                <h1 class="text-[23px] text-[#202020] font-medium">Onkar Auti</h1>
+                <div class="flex items-center justify-between gap-[10px] flex-wrap ">
+                    <div class="cursor-pointer text-[13px] px-[10px] py-[3px] bg-[#29a22948] text-[#202020] ">
+                        Joined - Feb 23 2024</div>
+                    <div class="cursor-pointer text-[13px] px-[10px] py-[3px] bg-[#ff000048] text-[#202020] ">
+                        Expire - Mar 23 2024</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-[20px]">
+                <button class="border px-[20px] py-[5px] bg-[#efefef] text-[15px]">Export</button>
+                <div class="flex items-center">
+                    <div class="cursor-pointer w-[35px] h-[35px] flex items-center justify-center bg-[#efefef] border">
+                        <i class="fi fi-rr-angle-small-left relative top-[2px] text-[18px]"></i>
+                    </div>
+                    <div class="cursor-pointer w-[35px] h-[35px] flex items-center justify-center bg-[#efefef] border">
+                        <i class="fi fi-rr-angle-small-right relative top-[2px] text-[18px]"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="info" class="w-[100%] h-[100%] flex items-start flex-col relative top-[40px]">
+            <div class="w-[100%] h-[100%] flex items-start gap-[20px]">
+
+                <!-- Basic Information -->
+                <div class="w-[50%] flex items-start gap-[15px] flex-col border pb-[20px]">
+                    <h1 class="text-[16px] sora font-semibold py-[8px] bg-[#efefef] w-[100%] px-[20px]">Basic
+                        Information</h1>
+                    <div class="flex items-center justify-between w-[100%] flex-col gap-[10px]">
+                        <div class="flex items-center w-[100%] justify-between px-[20px]">
+                            <p class="text-[16px] font-medium">Onkar Auti</p>
+                            <div class="flex items-center gap-[15px]">
+                                <div
+                                    class="w-[30px] h-[30px] hover:bg-[#efefef] flex items-center justify-center cursor-pointer">
+                                    <i class="fi fi-rr-copy-alt text-[18px] relative top-[3px]"></i>
+                                </div>
+                                <div
+                                    class="w-[30px] h-[30px] hover:bg-[#efefef] flex items-center justify-center cursor-pointer">
+                                    <i class="fi fi-rr-edit text-[17px] relative top-[3px]"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center w-[100%] justify-between px-[20px]">
+                            <p class="text-[16px] underline underline-offset-2 text-[#4d4be2] font-medium">
+                                onkarauti07@gmail.com</p>
+                            <div class="flex items-center gap-[15px]">
+                                <div
+                                    class="w-[30px] h-[30px] hover:bg-[#efefef] flex items-center justify-center cursor-pointer">
+                                    <i class="fi fi-rr-copy-alt text-[18px] relative top-[2px]"></i>
+                                </div>
+                                <div
+                                    class="w-[30px] h-[30px] hover:bg-[#efefef] flex items-center justify-center cursor-pointer">
+                                    <i class="fi fi-rr-edit text-[17px] relative top-[2px]"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center w-[100%] justify-between px-[20px]">
+                            <p class="text-[16px] font-medium">93073 60279</p>
+                            <div class="flex items-center gap-[15px]">
+                                <div
+                                    class="w-[30px] h-[30px] hover:bg-[#efefef] flex items-center justify-center cursor-pointer">
+                                    <i class="fi fi-rr-copy-alt text-[18px] relative top-[2px]"></i>
+                                </div>
+                                <div
+                                    class="w-[30px] h-[30px] hover:bg-[#efefef] flex items-center justify-center cursor-pointer">
+                                    <i class="fi fi-rr-edit text-[17px] relative top-[2px]"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membership Details -->
+                <div class="w-[50%] flex items-start flex-col border">
+                    <h1 class="text-[16px] sora font-semibold py-[8px] bg-[#efefef] w-[100%] px-[20px]">Basic
+                        Information</h1>
+                    <div class="flex items-center justify-between w-[100%] flex-col">
+                        <div class="w-[100%]">
+                            <div class="flex items-center w-[100%]">
+                                <div class="w-[50%] h-[50px] flex items-center justify-center border p-[10px]">
+                                    <p>Member ID</p>
+                                </div>
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>#1001</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center w-[100%]">
+                                <div class="w-[50%]  h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>Joined</p>
+                                </div>
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <div
+                                        class="cursor-pointer text-[13px] px-[10px] py-[3px] bg-[#29a22948] text-[#202020] ">
+                                        12 March 2024</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center w-[100%]">
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>Expire</p>
+                                </div>
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <div
+                                        class="cursor-pointer text-[13px] px-[10px] py-[3px] bg-[#ff000048] text-[#202020] ">
+                                        12 April 2024</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center w-[100%]">
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>Membership Status</p>
+                                </div>
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <div
+                                        class="cursor-pointer text-[13px] px-[10px] py-[3px] bg-[#ff000048] text-[#202020] ">
+                                        Active</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center w-[100%]">
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>Payment Status</p>
+                                </div>
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <div
+                                        class="cursor-pointer text-[13px] px-[10px] py-[3px] bg-[#ff000048] text-[#202020] ">
+                                        Paid</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="w-[100%] h-[100%] flex items-start gap-[20px]">
+
+                <!-- Personal Details -->
+                <div class="w-[50%] flex items-start flex-col border">
+                    <h1 class="text-[16px] sora font-semibold py-[8px] bg-[#efefef] w-[100%] px-[20px]">Basic
+                        Information</h1>
+                    <div class="flex items-center justify-between w-[100%] flex-col">
+                        <div class="w-[100%]">
+                            <div class="flex items-center w-[100%]">
+                                <div class="w-[50%] h-[50px] flex items-center justify-center border p-[10px]">
+                                    <p>Age </p>
+                                </div>
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>25</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center w-[100%]">
+                                <div class="w-[50%]  h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>Gender</p>
+                                </div>
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>Male</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center w-[100%]">
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>Height</p>
+                                </div>
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>170 Cm</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center w-[100%]">
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>Weight</p>
+                                </div>
+                                <div class="w-[50%] h-[50px]  flex items-center justify-center border p-[10px]">
+                                    <p>50 Kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contatc Details -->
+                <div class="w-[50%] flex items-start flex-col border">
+                    <h1 class="text-[16px] sora font-semibold py-[8px] bg-[#efefef] w-[100%] px-[20px]">Contact
+                        Details</h1>
+                    <div class="flex items-center justify-between w-[100%] flex-col">
+                        <div class="w-[100%]">
+                            <div class="flex items-center w-[100%]">
+                                <div class="w-[50%] flex items-center justify-center p-[10px]">
+                                    <p>Address </p>
+                                </div>
+                                <div class="w-[50%]  flex items-center justify-center border p-[10px] text-[15px]">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad doloremque magni
+                                        veritatis obcaecati, velit qui.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </section>
+    </section>
+</section>
+{% endblock main-content %}

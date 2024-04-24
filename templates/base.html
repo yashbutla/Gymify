@@ -1,0 +1,248 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Gymify - Dashbaord</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/static/images/whitelogo.png" type="image/x-icon">
+
+    <!-- Flaticons -->
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.2.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+
+    <!-- Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Sora Font for Heading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/index.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<style>
+    .sora{
+        font-family: "Sora", sans-serif;
+    }
+</style>
+<body class="bg-[#fff] w-[100%] h-[100%]">
+    <!-- Navigation Bar -->
+    <section id="navbar"
+        class="fixed z-[100] w-full h-[9%] bg-[#fff] flex items-center justify-between pl-[20px] pr-[20px] gap-[20px] border-[1px] border-b-[#e2e2e2] border-t-[#fff] border-l-[#fff] border-r-[#fff]">
+
+        <!-- Navbar content -->
+
+        <!-- Logo Img -->
+        <a href="" class="hidden lg:flex sm:w-[165px] items-center justify-start gap-[10px]">
+            <img src="/static/images/blacklogo.png" alt="" class="w-[28px]">
+            <h1 class="font-semibold text-[19px] flex items-center gap-[5px] text-[#202020]   sora">Gymify</h1>
+        </a>
+
+        <!-- Mobile Menu -->
+
+        <div id="menuIcon" class="lg:hidden w-[80px] sm:w-[165px] flex items-center justify-start group">
+
+            <!-- Menu Icon -->
+            <div class="  flex items-center justify-start" onclick="toggleSidebar()">
+                <div class=" w-[35px] h-[35px] flex items-center justify-center bg-[#efefef]  cursor-pointer">
+                    <i class="fi fi-rr-menu-burger text-[17px] text-[#202020] relative top-[3px]"></i>
+                </div>
+            </div>
+
+            <!-- Account Popover -->
+            <div
+                class=" hidden group-hover:block absolute top-[70px] px-[20px] py-[5px] before:absolute before:h-[15px] before:w-[15px] bg-[#efefef] before:top-[-7px] before:rounded-tl-[5px] before:left-[10px] before:rotate-45 before:bg-[#efefef] rounded-[12px] left-[20px] z-[11]">
+                <p class="text-[14px] text-[#202020]">Menu</p>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div id="search" class="flex items-center gap-[15px] bg-[#efefef] px-[15px] py-[5px] h-[35px] w-[500px] ">
+            <i class="fi fi-rr-search text-[#202020] text-[15px] relative top-[3px]"></i>
+            <input type="text"
+                class="text-[15px] bg-transparent focus:outline-none text-[#202020] placeholder:text-[#202020] w-[100%] placeholder:text-[15px]"
+                placeholder="Search">
+        </div>
+
+        <!-- Notification & Account -->
+        <div class="flex items-center gap-[10px]">
+            <!-- Notification -->
+            <div class="flex items-center justify-center  group">
+                <div id="notificationsIcon" onclick="toggleNotification()" class="w-[35px] h-[35px] flex items-center justify-center cursor-pointer bg-[#efefef]">
+                    <i class="fi fi-rr-bell text-[15px] relative top-[3px] text-[#202020]"></i>
+                </div>
+                <!-- Account Popover -->
+                <div
+                    class=" hidden group-hover:block absolute z-[11] top-[70px] px-[20px] py-[5px] before:absolute before:h-[15px] before:w-[15px] bg-[#efefef] before:top-[-7px] before:rounded-tl-[5px] before:left-[45%] before:rotate-45 before:bg-[#efefef] rounded-[12px]">
+                    <p class="text-[14px] text-[#202020]">Notication</p>
+                </div>
+            </div>
+
+            <!-- Mobile Account -->
+            <div class="flex items-center group">
+                <div
+                    class="sm:hidden w-[35px] h-[35px] bg-[#202020]  flex items-center justify-center cursor-pointer hover:bg-transparent border-[2px] border-[#202020] group transition duration-[0.1s] ">
+                    <p class="font-semibold text-[15px] text-[#fff] group-hover:text-[#202020]">NL</p>
+                </div>
+                <!-- Account Popover -->
+                <div
+                    class=" hidden group-hover:block absolute top-[70px] px-[20px] py-[5px] before:absolute before:h-[15px] before:w-[15px] bg-[#efefef] before:top-[-7px] before:rounded-tl-[5px] before:right-[15px] before:rotate-45 before:bg-[#efefef] rounded-[12px] right-[25px] z-[11]">
+                    <p class="text-[14px] text-[#202020]">Account</p>
+                </div>
+            </div>
+
+            <!-- Account -->
+            <div class="flex items-center gap-[20px] flex-col group">
+                <div id="account" onclick="toggleAccount()"
+                    class="hidden sm:flex items-center justify-between gap-[5px] h-[35px] bg-[#efefef] w-[120px] pl-[10px] cursor-pointer">
+                    <p class="w-[70px] text-ellipsis overflow-hidden text-nowrap font-normal text-[#202020]">Next Level
+                    </p>
+                    <div
+                        class="w-[35px] h-[35px] bg-[#202020]   flex items-center justify-center cursor-pointer hover:bg-transparent transition duration-[0.1s] border-[2px] border-[#202020]">
+                        <p class="font-semibold text-[15px] text-[#fff]">NL</p>
+                    </div>
+                </div>
+                <!-- Account Popover -->
+                <div
+                    class="hidden group-hover:block absolute top-[70px] px-[20px] py-[5px] before:absolute before:h-[15px] before:w-[15px] bg-[#efefef] before:top-[-8px] before:rounded-tl-[5px] before:left-[45%] before:rotate-45 before:bg-[#efefef]">
+                    <p class="text-[14px] text-[#dcdcdc]">Account</p>
+                </div>
+
+                <!-- Account Sidebar -->
+                <section id="accountSidebar" class="w-[300px] absolute h-[100vh] top-[65px] right-0 bg-white border translate-x-[300px] transition duration-[0.3s] p-[20px]">
+                    <div class="flex items-center gap-[10px] p-[5px] bg-[#efefef] cursor-pointer my-[5px]">
+                        <div class="w-[25px] h-[25px] bg-[#2f9f2f]"></div>
+                        <p class="text-[15px] text-[#535353] font-medium">Next Level</p>
+                    </div>
+                    <div class="flex items-center gap-[10px] p-[5px] hover:bg-[#efefef] cursor-pointer my-[5px]">
+                        <i class="fi fi-rr-store-alt text-[17px] relative top-[2px]"></i>
+                        <p class="text-[15px] text-[#535353] font-medium">All Stores</p>
+                    </div>
+                    <hr>
+                    <div
+                        class="my-[5px] text-[14px] p-[5px] text-[#535353] font-medium cursor-pointer hover:underline underline-offset-2">
+                        Help center</div>
+                    <div
+                        class="text-[14px] my-[5px] p-[5px] text-[#535353] font-medium cursor-pointer hover:underline underline-offset-2">
+                        Community</div>
+                    <hr>
+                    <div class="flex flex-col gap-[4px] p-[5px] my-[5px] cursor-none">
+                        <p class="text-[14px] font-semibold text-[#292929]">Next Level Admin</p>
+                        <p class="text-[14px] text-[#535353] font-medium">nextlevel@gmail.com</p>
+                    </div>
+                    <div class="p-[5px] hover:bg-[#efefef] cursor-pointer">
+                        <p class="text-[14px] text-[#535353] font-medium">Log Out</p>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+        <section id="notifications" class="w-[300px] absolute h-[100vh] top-[65px] right-0 bg-white border translate-x-[300px] transition duration-[0.3s]">
+            <div class="p-[20px] border-b flex items-start justify-between w-[100%]">
+                <div>
+                    <p class="text-[18px] font-semibold sora">Notifications</p>
+                    <div class="flex items-center gap-[20px]">
+                        <p class="text-[15px]"> Mark as all read </p>
+                        <input type="checkbox" name="" id="" class="w-[15px] h-[15px]">
+                    </div>
+                </div>
+                <!-- Close Notification Sidebar -->
+                <div id="closeNotificationsBar" class="cursor-pointer w-[35px] h-[35px] flex items-center justify-center bg-[#efefef]">
+                    <i class="fi fi-rr-cross text-[15px] relative top-[3px]"></i>
+                </div>
+            </div>
+            <!-- Notofication Template -->
+            <div class="w-[100%] flex items-start gap-[8px] flex-col border-b border-[#ccc] p-[20px] hover:bg-[#efefef] cursor-pointer">
+                <div class="flex items-center w-[100%] justify-between">
+                    <div class="flex items-center gap-[5px]">
+                        <p class="text-[14px] font-medium">Members</p>
+                        <p class="text-[14px] ">-</p>
+                        <p class="text-[14px]">April 26 at 10:25 PM</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="" class="w-[15px] h-[15px]">
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[14px]">New members was created successfully - <span class="font-medium"> Prajwal
+                            Warkhade </span></p>
+                </div>
+            </div>
+
+            <!-- Notification Template -Mail sended -->
+            <div class="w-[100%] flex items-start gap-[8px] flex-col border-b border-[#ccc] p-[20px] hover:bg-[#efefef] cursor-pointer">
+                <div class="flex items-center w-[100%] justify-between">
+                    <div class="flex items-center gap-[5px]">
+                        <p class="text-[14px] font-medium">Mailing</p>
+                        <p class="text-[14px] ">-</p>
+                        <p class="text-[14px]">April 26 at 11:02 PM</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="" class="w-[15px] h-[15px]">
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[14px]">Gym subscription will expire in 3 days mail successfully sended to - <span
+                            class="font-medium"> Prajwal Warkhade </span></p>
+                </div>
+            </div>
+            <!-- Notification Template -Mail sended -->
+            <div class="w-[100%] flex items-start gap-[8px] flex-col border-b border-[#ccc] p-[20px] hover:bg-[#efefef] cursor-pointer">
+                <div class="flex items-center w-[100%] justify-between">
+                    <div class="flex items-center gap-[5px]">
+                        <p class="text-[14px] font-medium">Members</p>
+                        <p class="text-[14px] ">-</p>
+                        <p class="text-[14px]">April 26 at 11:02 PM</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="" id="" class="w-[15px] h-[15px]">
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[14px]"><span class="font-medium"> Prajwal Warkhade </span> & <span
+                            class="font-medium"> Onkar Auti </span> Gym subscription has been expired </p>
+                </div>
+            </div>
+        </section>
+        <!-- Account -->
+
+    </section>
+    {% block main-content %}
+
+    {% endblock main-content%}
+    <!-- Script -->
+    <script src="/static/js/base.js"></script>
+    <script src="/static/js/index.js"></script>
+</body>
+
+</html>

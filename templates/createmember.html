@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main-content %}
+
+<!--! Main Section -->
+<section id="mainSection" class="absolute top-[9%] flex w-[100%] h-[9%]">
+    <section id="sidebar" class="lg:w-[20%] xl:w-[18%]  lg:translate-x-[0px] gymify-sidebar">
+
+        <!-- Home -->
+        <a href="/" id="home" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-house-blank group-hover:text-[rgb(255,255,255)] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Home</p>
+        </a>
+
+        <!-- Members -->
+        <a href="/members" id="members" class="tab gymify-sidebar-active-tabs">
+            <i class="fi fi-rs-user  gymify-active-tab-icons"></i>
+            <p class="gymify-active-tabs-text">Members</p>
+        </a>
+
+        <!-- Products -->
+        <a href="/products" id="products" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-boxes  group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Products</p>
+        </a>
+
+        <!-- Mailing -->
+        <a href="/mailing" id="mailing" class="tab  hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-envelope group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Mailing</p>
+        </a>
+
+        <!-- Analytics -->
+        <a href="/analytics" id="analytics" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-stats group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Analytics</p>
+        </a>
+
+        <!-- Attendance -->
+        <a href="/attendance" id="attendance" class="tab hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rs-user-check group-hover:text-[#fff] gymify-tab-icons"></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Attendance</p>
+        </a>
+
+        <!-- Sales Channels -->
+        <div class=" relative top-[50px] flex items-center justify-between px-[20px] py-[10px] bg-[#efefef]">
+            <p>Sales channel</p>
+            <i class="fi fi-rr-angle-small-right text-[18px] relative top-[6px]"></i>
+        </div>
+
+        <a href="/store" id="store" class="tab relative top-[50px] hover:bg-[#202020] group gymify-sidebar-tabs">
+            <i class="fi fi-rr-stats group-hover:text-[#fff] gymify-tab-icons "></i>
+            <p class="gymify-tabs-text group-hover:text-[#fff]">Online store</p>
+        </a>
+
+        <a href="/settings" id="settings" class="tab absolute bottom-[0px] gymify-sidebar-tabs hover:bg-[#202020]  group border-t">
+            <i class="fi fi-rr-stats gymify-tab-icons group-hover:text-[#fff] "></i>
+            <p class="text-[16px] text-[#202020] group-hover:text-[#fff]">Settings </p>
+        </a>
+
+    </section>
+    <!--! Closed Sidebar  -->
+
+    <section id="content"
+        class="absolute h-[100vh] w-[100%] lg:left-[25%] xl:left-[20%]  lg:w-[75%] xl:w-[80%] sm:p-[20px]  flex items-start justify-center ">
+        <!--! Content section content -->
+
+        <!-- Create Member  -->
+        <section id="createMember"
+            class="xl:w-[90%] lg:w-[100%] relative justify-center flex items-start gap-[20px] flex-col pb-[50px]">
+            <div class="flex items-center gap-[20px] cursor-pointer p-[20px]">
+                <div class="w-[35px] h-[35px]  bg-[#efefef] flex items-center justify-center">
+                    <i class="fi fi-rr-arrow-left text-[17px] relative top-[3px] text-[#202020]"></i>
+                </div>
+                <h1 class="text-[#202020] text-[23px] font-semibold">Create member</h1>
+            </div>
+
+            <!-- Form -->
+            <section
+                class="flex items-start gap-[30px] relative lg:top-[20px] w-[100%] justify-between flex-col lg:flex-row pb-[50px]">
+                <form  action="{% url 'create_member' %}" method="POST" class=" w-[100%] lg:w-[50%] flex items-start gap-[20px] flex-col p-[20px]">
+                    {% csrf_token %}
+                    <div class="flex items-start justify-start gap-[5px] flex-col w-[100%]">
+                        <label for="" class="text-[15px] text-[#202020]">Name</label>
+                        <input type="text" name="name" placeholder="Enter member name"
+                            class="px-[15px] py-[10px]  bg-[#efefef] focus:outline text-[14px] placeholder:text-[#202020] placeholder:text-[14px] w-[100%] text-[#202020] font-normal placeholder:font-light">
+                    </div>
+                    <div class="flex items-start justify-start gap-[5px] flex-col w-[100%]">
+                        <label for="" class="text-[15px] text-[#202020]">Email</label>
+                        <input type="text" name="email" placeholder="Enter member email"
+                            class="px-[15px] py-[10px]  bg-[#efefef] focus:outline text-[14px] placeholder:text-[#202020] placeholder:text-[14px] w-[100%] text-[#202020] font-normal placeholder:font-light">
+                    </div>
+                    <div class="flex items-start justify-start gap-[5px] flex-col w-[100%]">
+                        <label for="" class="text-[15px] text-[#202020]">Mobile number</label>
+                        <input type="text" name="mobile_number" placeholder="Enter member mobile number"
+                            class="px-[15px] py-[10px]  bg-[#efefef] focus:outline text-[14px] placeholder:text-[#202020] placeholder:text-[14px] w-[100%] text-[#202020] font-normal placeholder:font-light">
+                    </div>
+                    <div class="flex items-center justify-between w-[100%] gap-[20px]">
+                        <div class="flex items-start justify-start gap-[5px] flex-col w-[100%]">
+                            <label for="" class="text-[15px] text-[#202020]">Height </label>
+                            <input type="text" name="height" placeholder="Enter a height"
+                                class="px-[15px] py-[10px] bg-[#efefef] focus:outline text-[14px] placeholder:text-[#202020] placeholder:text-[14px] w-[100%] text-[#202020] font-normal placeholder:font-light">
+                        </div>
+                        <div class="flex items-start justify-start gap-[5px] flex-col w-[100%]">
+                            <label for="" class="text-[15px] text-[#202020]">Weight</label>
+                            <input type="text" name="weight" placeholder="Enter a weight"
+                                class="px-[15px] py-[10px]  bg-[#efefef] focus:outline text-[14px] placeholder:text-[#202020] placeholder:text-[14px] w-[100%] text-[#202020] font-normal placeholder:font-light">
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between w-[100%] gap-[20px]">
+                        <div class="flex items-start justify-start gap-[5px] flex-col w-[100%]">
+                            <label for="" class="text-[15px] text-[#202020]">Start date </label>
+                            <input type="date" name="start_date" placeholder="Enter a height"
+                                class="  cursor-pointer px-[15px] py-[10px]  bg-[#efefef] focus:outline text-[14px] placeholder:text-[#202020] placeholder:text-[14px] w-[100%] text-[#202020] font-normal placeholder:font-light">
+                        </div>
+                        <div class="flex items-start justify-start gap-[5px] flex-col w-[100%]">
+                            <label for="" class="text-[15px] text-[#202020]">End date</label>
+                            <input type="date" name="end_date" placeholder="Enter a weight"
+                                class="  cursor-pointer px-[15px] py-[10px]  bg-[#efefef] focus:outline text-[14px] placeholder:text-[#202020] placeholder:text-[14px] w-[100%] text-[#202020] font-normal placeholder:font-light">
+                        </div>
+
+                    </div>
+                    <div class="flex items-start justify-start gap-[20px] w-[100%]">
+                        <div class="w-[100%] flex items-start gap-[8px] flex-col">
+                            <label for="" class="text-[15px] text-[#202020]">Set Fees</label>
+                            <input type="number" name="fees" placeholder="Enter member fees"
+                                class=" cursor-pointer px-[15px] py-[10px]  bg-[#efefef] focus:outline text-[14px] placeholder:text-[#202020] placeholder:text-[14px] w-[100%] text-[#202020] font-normal placeholder:font-light">
+                        </div>
+                        <div class="w-[100%] flex items-start flex-col gap-[8px]">
+                            <label for="training_type" class="text-[15px] text-[#202020]">Training Type</label>
+                            <select id="training_type" name="training_type" class="cursor-pointer px-[15px] py-[10px] bg-[#efefef] focus:outline text-[14px] placeholder:text-[#202020] placeholder:text-[14px] w-[100%] text-[#202020] font-normal placeholder:font-light">
+                                <option value="Normal Training">Normal Training</option>
+                                <option value="Personal Training">Personal Training</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button
+                        class="w-[100%] h-[45px] bg-[#202020] text-[#fff] flex items-center gap-[15px] justify-center font-semibold text-[15px]">Create
+                        member <i class="fi fi-rr-user-add text-[#fff]"></i></button>
+                </form>
+
+                <section class="lg:w-[50%] w-[100%] flex flex-col items-center gap-[30px] p-[20px]">
+                    <section id="dietPlan" class="w-[100%] flex items-start gap-[5px] flex-col bg-[#efefef] p-[20px] ">
+                        <h3 class="text-[18px] text-[#202020] my-[10px]">Set workout plan</h3>
+                        <div class="w-[100%] flex items-center flex-col gap-[10px] border ">
+                            <div class="flex items-center justify-between w-[100%] bg-[#fff] ">
+                                <div class="flex items-center gap-[20px]">
+                                    <div
+                                        class="px-[10px] py-[5px] m-[8px] bg-[#202020] justify-start text-[14px] text-[#fff] ">
+                                        Monday</div>
+                                    <p class="text-[14px] text-[#202020] font-medium">Chest & triceps</p>
+                                </div>
+                                <div
+                                    class="w-[30px] h-[30px] bg-[#ff181865] flex items-center  justify-center text-[14px] text-[#ff0000] relative right-[8px] cursor-pointer border-[2px] border-[#ff0000]">
+                                    <i class="fi fi-rr-cross text-[12px] relative top-[2px] "></i>
+                                </div>
+                            </div>
+                            <div class="bg-[#ccc] h-[1px] w-[100%] my-[5px]"></div>
+
+                            <div class="flex items-center justify-around gap-[10px] w-[100%] ">
+                                <select name="" id=""
+                                    class="w-[35%] bg-[#fff]  px-[15px] py-[9px] text-[14px] text-[#202020] focus:outline">
+                                    <option value="">Sunday</option>
+                                    <option value="" selected>Monday</option>
+                                    <option value="">Tuesday</option>
+                                    <option value="">Wednesday</option>
+                                    <option value="">Thursday</option>
+                                    <option value="">Friday</option>
+                                    <option value="">Saturnday</option>
+                                </select>
+                                <div class="flex items-center justify-between w-[100%] bg-[#fff] border  ">
+
+                                    <input type="text" placeholder="Enter your workout"
+                                        class="w-[90%]  px-[15px]  py-[10px] text-[14px] text-[#202020] placeholder:text-[#202020] placeholder:text-[14px] ">
+                                    <div
+                                        class="relative right-[7px] w-[30px] h-[30px] flex items-center justify-center bg-[#00ff0048] cursor-pointer border-[2px] border-[#188e18]">
+                                        <i class="fi fi-rr-check text-[16px] relative top-[2px] text-[#188e18]"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                class="w-[100%] h-[41px] border-[2px] border-[#202020] bg-[#fff] hover:bg-[#202020] text-[#202020] hover:text-[#fff] group text-[14px] flex items-center gap-[10px] justify-center">
+                                Add
+                                <i
+                                    class="fi fi-rr-plus text-[13px] relative top-[2px] text-[#202020] group-hover:text-[#fff] "></i>
+                            </button>
+                        </div>
+                    </section>
+                    <section id="dietPlan" class="w-[100%] flex items-start gap-[5px] flex-col  bg-[#efefef] p-[20px] ">
+                        <h3 class="text-[18px] text-[#202020] my-[10px]">Set diet plan</h3>
+                        <div class="w-[100%] flex items-center flex-col gap-[10px]">
+                            <div class="flex items-center justify-between w-[100%] bg-[#fff] border ">
+                                <div class="flex items-center gap-[20px] ">
+
+                                    <div
+                                        class="px-[10px] py-[5px] m-[8px] bg-[#202020] justify-start text-[14px] text-[#fff] ">
+                                        2:30 PM</div>
+                                    <p class="text-[14px] text-[#202020] font-medium">Smoothy</p>
+                                </div>
+                                <div
+                                    class="w-[30px] h-[30px] bg-[#ff181865] flex items-center  justify-center text-[14px] text-[#ff0000] relative right-[8px] cursor-pointer border-[2px] border-[#ff0000]">
+                                    <i class="fi fi-rr-cross text-[12px] relative top-[2px] "></i>
+                                </div>
+                            </div>
+                            <div class="bg-[#ccc] h-[1px] w-[100%] my-[5px]">
+                            </div>
+                            <div class="flex items-center justify-around gap-[10px] w-[100%] ">
+                                <input type="time" name="" id=""
+                                    class="w-[30%] bg-[#fff] px-[10px] py-[9px] text-[14px] text-[#202020] placeholder:text-[#202020] placeholder:text-[14px] border focus:outline">
+                                <div class="w-[100%] flex items-center justify-between bg-[#fff]">
+
+                                    <input type="text" placeholder="Enter your meal"
+                                        class=" w-[55%]  px-[15px] focus:outline-none py-[10px] text-[14px] text-[#202020] placeholder:text-[#202020] placeholder:text-[14px]">
+
+                                    <div
+                                        class="relative right-[7px] w-[30px] h-[30px] flex items-center justify-center bg-[#00ff0048] cursor-pointer border-[2px] border-[#188e18]">
+                                        <i class="fi fi-rr-check text-[16px] relative top-[2px] text-[#188e18]"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                class="w-[100%] h-[41px] bg-[fff] text-[#202020] text-[14px] flex items-center gap-[10px] justify-center border-[2px] border-[#202020] hover:bg-[#202020] hover:text-[#fff] group">
+                                Add
+                                <i
+                                    class="fi fi-rr-plus text-[13px] relative top-[2px] text-[#202020] group-hover:text-[#fff]"></i>
+                            </button>
+                        </div>
+                    </section>
+                </section>
+
+            </section>
+        </section>
+    </section>
+</section>
+{% endblock main-content %}
